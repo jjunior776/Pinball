@@ -3,28 +3,33 @@ using System.Collections;
 
 public class palka : MonoBehaviour {
 
-	public Transform pivot;
-	Vector3 rotujNa = new Vector3(0,0,1);
-	public float uhel = 90;
 	bool otevreno=false;
 	public KeyCode klavesa;
-	
+    public int mirroring = 1;
+
+    HingeJoint2D hj;
 
 	// Use this for initialization
 	void Start () {
-	
+	    hj = gameObject.GetComponent<HingeJoint2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if((Input.GetKeyDown(klavesa))&&(otevreno==false)){
-			transform.RotateAround (pivot.position, rotujNa, uhel);
+		if((Input.GetKey(klavesa))){
+            JointMotor2D j = new JointMotor2D();
+            j.motorSpeed = -1000*mirroring;
+            j.maxMotorTorque = 10000;
+            hj.motor = j;
 			otevreno=true;
-		}
-		if ((Input.GetKeyUp (klavesa)) && (otevreno == true)) {
-			transform.RotateAround (pivot.position, rotujNa, -uhel);
+		}else{
+            JointMotor2D j = new JointMotor2D();
+            j.motorSpeed = 1000*mirroring;
+            j.maxMotorTorque = 10000;
+            hj.motor = j;
 			otevreno=false;
 		}
+        Debug.Log(klavesa +" "+ Input.GetKey(klavesa) + " force: " + hj.motor.motorSpeed);
 
 	}
 }
