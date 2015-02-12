@@ -8,7 +8,7 @@ public class palka : MonoBehaviour {
     public int mirroring = 1;
 
     HingeJoint2D hj;
-
+	JointMotor2D j = new JointMotor2D();
 	// Use this for initialization
 	void Start () {
 	    hj = gameObject.GetComponent<HingeJoint2D>();
@@ -16,20 +16,20 @@ public class palka : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		hj.motor = j;
 		if((Input.GetKey(klavesa))){
-            JointMotor2D j = new JointMotor2D();
-            j.motorSpeed = -1000*mirroring;
+            
+            j.motorSpeed = -2000*mirroring;
             j.maxMotorTorque = 10000;
-            hj.motor = j;
+            //hj.motor = j;
 			otevreno=true;
 		}else{
-            JointMotor2D j = new JointMotor2D();
-            j.motorSpeed = 1000*mirroring;
+            j.motorSpeed = 2000*mirroring;
             j.maxMotorTorque = 10000;
-            hj.motor = j;
+            //hj.motor = j;
 			otevreno=false;
 		}
-        Debug.Log(klavesa +" "+ Input.GetKey(klavesa) + " force: " + hj.motor.motorSpeed);
+        //Debug.Log(klavesa +" "+ Input.GetKey(klavesa) + " force: " + hj.motor.motorSpeed);
 
 	}
 }

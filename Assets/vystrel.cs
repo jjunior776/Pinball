@@ -4,21 +4,25 @@ using System.Collections;
 public class vystrel : MonoBehaviour {
 	public Transform mistoVystrelu;
 	public LayerMask kulicka;
-	float radius = 1f;
+	float radius = 0.5f;
 	bool pripravenKVystrelu=false;
-
+	SliderJoint2D hj;
+	JointMotor2D j = new JointMotor2D();
 
 	// Use this for initialization
 	void FixedUpdate () {
 		pripravenKVystrelu = Physics2D.OverlapCircle (mistoVystrelu.position, radius,  kulicka);
+		hj = gameObject.GetComponent<SliderJoint2D>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if ((pripravenKVystrelu == true)&&(Input.GetKeyUp(KeyCode.Space))) {
-			Debug.Log("vystreleno");
-
+		j.motorSpeed = -10000;
+		j.maxMotorTorque = 500;
+		if ((pripravenKVystrelu == true)&&(Input.GetKey(KeyCode.Space))) {
+			j.motorSpeed = 100;
 		}
+		hj.motor = j;
 	}
 }
