@@ -4,7 +4,7 @@ using System.Collections;
 public class vystrel : MonoBehaviour {
 	public Transform mistoVystrelu;
 	public LayerMask kulicka;
-	float radius = 0.5f;
+	float radius = 1f;
 	bool pripravenKVystrelu=false;
 	SliderJoint2D hj;
 	JointMotor2D j = new JointMotor2D();
@@ -19,9 +19,9 @@ public class vystrel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		j.motorSpeed = -10000;
-		j.maxMotorTorque = 500;
+		j.maxMotorTorque = 300;
 		if ((pripravenKVystrelu == true)&&(Input.GetKey(KeyCode.Space))) {
-			j.motorSpeed = 100;
+			j.motorSpeed = 150;
 		}
 		hj.motor = j;
 	}
