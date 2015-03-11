@@ -8,7 +8,6 @@ public class vystrel : MonoBehaviour {
 	bool pripravenKVystrelu=false;
 	SliderJoint2D hj;
 	JointMotor2D j = new JointMotor2D();
-
 	// Use this for initialization
 	void FixedUpdate () {
 		pripravenKVystrelu = Physics2D.OverlapCircle (mistoVystrelu.position, radius,  kulicka);
