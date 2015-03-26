@@ -16,4 +16,15 @@ public class gameControll : MonoBehaviour {
 		score = 0;
 		balls = 3;
 	}
+<<<<<<< HEAD
+=======
+	
+	// Update is called once per frame
+	void Update () {
+		if (balls <= 0) {
+		
+		
+		}
+	}
+>>>>>>> 1cee62a07cdf22ab48f401a8bc6970be574a3e6d
 }

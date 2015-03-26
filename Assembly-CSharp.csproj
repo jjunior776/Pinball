@@ -39,25 +39,41 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
+<<<<<<< HEAD
 	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+=======
+	  <HintPath>D:/Program Files/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Program Files/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> 1cee62a07cdf22ab48f401a8bc6970be574a3e6d
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\bounce.cs" />
+     <Compile Include="Assets\chyt.cs" />
      <Compile Include="Assets\gameControll.cs" />
      <Compile Include="Assets\micekMimoStul.cs" />
      <Compile Include="Assets\palka.cs" />
      <Compile Include="Assets\pridejBody.cs" />
      <Compile Include="Assets\quitScript.cs" />
+<<<<<<< HEAD
+=======
+     <Compile Include="Assets\scoreBoard.cs" />
+>>>>>>> 1cee62a07cdf22ab48f401a8bc6970be574a3e6d
      <Compile Include="Assets\startGameButton.cs" />
      <Compile Include="Assets\statisticsButtonScript.cs" />
      <Compile Include="Assets\uzavreni.cs" />
      <Compile Include="Assets\vystrel.cs" />
  <Reference Include="UnityEngine.UI">
+<<<<<<< HEAD
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+=======
+ <HintPath>D:/Program Files/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+>>>>>>> 1cee62a07cdf22ab48f401a8bc6970be574a3e6d
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
