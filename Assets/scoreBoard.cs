@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class scoreBoard : MonoBehaviour {
-
+	/*
 	const string filename = "score.txt";
 
 
@@ -38,7 +38,7 @@ public class scoreBoard : MonoBehaviour {
 		}
 		ArrayList lines = content.Split (";");
 		for (int i = 1; i<11;i++) {
-			ArrayList line =  lines[i-1].Split(":");
+			//ArrayList line =  lines[i-1].Split(":");
 			loaded.Add(i, line[0]+line[1]);
 		}
 		return loaded;
@@ -83,4 +83,5 @@ public class scoreBoard : MonoBehaviour {
 		}
 		return score;
 
+}*/
 }
