@@ -19,6 +19,7 @@ public class uzavreni : MonoBehaviour {
 		if (micek.tag == "micek") {
 			j.motorSpeed = 500;
 			j.maxMotorTorque = 1000;
+
 		}
 		zarazka.motor = j;
 	}

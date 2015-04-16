@@ -15,7 +15,6 @@ public class gameControll : MonoBehaviour {
 		GUI.Box (new Rect (0,(sizeY+3),sizeX,sizeY), "Míčky: "+ balls);
 
 		if (balls <= 0) {
-			Debug.Log("prohral jsi");
 			konecOkno.enabled = true;
 		}
 
