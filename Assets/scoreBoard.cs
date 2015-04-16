@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class scoreBoard : MonoBehaviour {
-	/*
+
 	const string filename = "score.txt";
 
 
@@ -83,5 +83,5 @@ public class scoreBoard : MonoBehaviour {
 		}
 		return score;
 
-}*/
+}
 }
