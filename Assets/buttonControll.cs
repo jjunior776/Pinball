@@ -3,17 +3,8 @@ using System.Collections;
 
 public class buttonControll : MonoBehaviour {
 	public UnityEngine.UI.InputField jmenoText;
-	public string jmeno;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	string jmeno;
+	public scoreBoard sc;
 
 	public void menu(){
 		Application.LoadLevel ("menu");
@@ -21,8 +12,19 @@ public class buttonControll : MonoBehaviour {
 	
 	public void zapisSkore(){
 		jmeno = jmenoText.text;
+		sc = new scoreBoard ();
+		sc.loadScoreSimple ();
+		sc.addScore (jmeno, gameControll.score);
+		sc.saveScore ();
 
+		Application.LoadLevel ("scoreboard");
+	}
 
-		Application.LoadLevel ("menu");
+	public void levejOdpal(){
+		Input.GetKey ("D");
+
+	}
+
+	public void pravejOdpal(){
 	}
 }

@@ -18,11 +18,7 @@ public class palka : MonoBehaviour {
 	void Update () {
 		hj.motor = j;
 		if((Input.GetKey(klavesa))){
-            
-            j.motorSpeed = -2000*mirroring;
-            j.maxMotorTorque = 10000;
-            //hj.motor = j;
-			otevreno=true;
+			Odpal();
 		}else{
             j.motorSpeed = 2000*mirroring;
             j.maxMotorTorque = 10000;
@@ -31,5 +27,13 @@ public class palka : MonoBehaviour {
 		}
         //Debug.Log(klavesa +" "+ Input.GetKey(klavesa) + " force: " + hj.motor.motorSpeed);
 
+	}
+
+	public void Odpal(){
+		
+		j.motorSpeed = -2000*mirroring;
+		j.maxMotorTorque = 10000;
+		//hj.motor = j;
+		otevreno=true;
 	}
 }
