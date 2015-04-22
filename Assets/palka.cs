@@ -6,6 +6,7 @@ public class palka : MonoBehaviour {
 	bool otevreno=false;
 	public KeyCode klavesa;
     public int mirroring = 1;
+	public bool levaStrana;
 
     HingeJoint2D hj;
 	JointMotor2D j = new JointMotor2D();
@@ -17,15 +18,35 @@ public class palka : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		hj.motor = j;
-		if((Input.GetKey(klavesa))){
-			Odpal();
-		}else{
-            j.motorSpeed = 2000*mirroring;
-            j.maxMotorTorque = 10000;
-            //hj.motor = j;
-			otevreno=false;
-		}
-        //Debug.Log(klavesa +" "+ Input.GetKey(klavesa) + " force: " + hj.motor.motorSpeed);
+		if ((Input.GetKey (klavesa))) {
+			Odpal ();
+		} else {
+			j.motorSpeed = 2000 * mirroring;
+			j.maxMotorTorque = 10000;
+			//hj.motor = j;
+			otevreno = false;
+		}  
+
+	for(int i = 0; i < Input.touchCount; i++){
+		if (Input.GetTouch (i).phase == TouchPhase.Began) {
+			if (levaStrana) {
+				if (Input.GetTouch (i).position.x < Screen.width / 2) {
+					Odpal ();
+				}
+			} else {
+				if (Input.GetTouch (i).position.x > Screen.width / 2) {
+					Odpal ();
+				}
+			}
+		
+		} else {
+			j.motorSpeed = 2000 * mirroring;
+			j.maxMotorTorque = 10000;
+			//hj.motor = j;
+			otevreno = false;
+		}  
+	}
+
 
 	}
 
